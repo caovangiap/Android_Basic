@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android_basic.viewmodel.ViewModelLogin" />
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="48dp"
+                android:orientation="vertical"
+                android:layout_marginRight="48dp"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/Title"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/m_i_b_n_ng_nh_p_b_t_u_tr_i_nghi_m"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle=""
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/blackgroundlogin"
+            android:layout_weight="3.1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="26sp"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="48dp"
+                android:text="@string/DangNhap"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <EditText
+                    android:id="@+id/UserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:autofillHints=""
+                    android:background="@drawable/border"
+                    android:hint="Tên tài khoản"
+                    android:paddingStart="20dp"
+                    android:textStyle="italic"
+                    tools:ignore="RtlSymmetry"
+                    android:text="@={viewModel.inputName}"
+                    android:textColor="@color/black"
+                    />
+
+                <EditText
+                    android:id="@+id/UserPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border"
+                    android:hint="Mật khẩu"
+                    android:inputType="textPassword"
+                    android:paddingStart="20dp"
+                    android:textStyle="italic"
+                    android:text="@={viewModel.inputPass}"
+                    android:textColor="@color/black"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/SavePass"
+                    android:textStyle="italic"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/SingIn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:text="@string/SingIn"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/SingUp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:text="@string/SingUp"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/black"
+                        android:onClick="@{()->viewModel.singUp()}"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Forgot"
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/border"
+                android:backgroundTint="#FF5722"
+                android:text="@string/forrgot_password"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

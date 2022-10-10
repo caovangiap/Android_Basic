@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.android_basic.viewmodel.ViewModelManager" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frane_container"
+        tools:context=".ui.manager.FragmentManager">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Wellcome shopping"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/main"
+            app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="11dp"
+                        android:text="@string/new_fashion"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/new_fashion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTitle"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginBottom="11dp" />
+
+                    <TextView
+                        android:id="@+id/tvTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/new_fashion"
+                        android:layout_marginTop="13dp"
+                        android:padding="11dp"
+                        android:text="@string/recommend_product"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recommend_product"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTitle1"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginBottom="11dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_below="@id/recommend_product"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/linearLayout1"
+                        android:weightSum="100">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FF9E80"
+                            android:layout_weight="25"
+                            android:elevation="1dp">
+
+                            <Button
+                                android:id="@+id/allproduct"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#00FFFFFF"
+                                android:elevation="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:onClick="@{()->viewmodel.actionAllProduct()}"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="15dp"
+                                android:textSize="25sp"
+                                android:text="@string/all_product"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintHorizontal_bias="0" />
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="right"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ronaldo"
+                                android:layout_marginEnd="20dp"
+                                app:layout_constraintHorizontal_bias="1"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#8C9EFF"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="25"
+                            android:elevation="1dp"
+                            >
+
+                            <Button
+                                android:id="@+id/new_product"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#00FFFFFF"
+                                android:elevation="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:onClick="@{()->viewmodel.newProduct()}"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center"
+                                android:layout_marginStart="15dp"
+                                android:textSize="25sp"
+                                android:text="@string/new_product"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintHorizontal_bias="0.1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:textColor="@color/white"
+                                android:elevation="1dp"
+                                />
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="right"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/nikefotball"
+                                android:layout_marginEnd="20dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:elevation="1dp"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#83C8C6C7"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="25"
+                            android:elevation="1dp"
+                            >
+
+                            <Button
+                                android:id="@+id/HistoryBuy"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#00FFFFFF"
+                                android:elevation="5dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:onClick="@{()->viewmodel.history()}"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="15dp"
+                                android:textSize="25sp"
+                                android:text="@string/sale" />
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="right"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/clothing_preview"
+                                android:layout_marginEnd="20dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#F4FF81"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="25">
+
+                            <Button
+                                android:id="@+id/best_SellingProduct"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#00FFFFFF"
+                                android:elevation="5dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:onClick="@{()->viewmodel.profile()}"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="15dp"
+                                android:textSize="25sp"
+                                android:text="@string/change_proile" />
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="right"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/sale_preview"
+                                android:layout_marginEnd="20dp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linearLayout1"
+                        android:layout_marginTop="13dp"
+                        android:padding="11dp"
+                        android:text="@string/jusi_in"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycleViewGrid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTitle2"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginBottom="11dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/recycleViewGrid"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/cardView"
+                        android:layout_margin="15dp"
+                        app:cardCornerRadius="17dp">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all"
+                            android:background="@color/white"
+                            android:textColor="@color/black" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/tvTitle3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardView"
+                        android:layout_marginTop="13dp"
+                        android:padding="11dp"
+                        android:text="@string/shop_by_brand"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/tvTitle3"
+                        android:layout_margin="15dp"
+                        android:columnCount="3"
+                        android:rowCount="2">
+
+                        <ImageView
+                            android:id="@+id/btn1"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            android:layout_height="100dp"
+                            android:layout_width="100dp"
+                            android:src="@drawable/nikebrand" />
+
+                        <ImageView
+                            android:id="@+id/btn2"
+                            android:layout_width="100dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            android:layout_height="100dp"
+                            android:src="@drawable/plusbrand" />
+
+                        <ImageView
+                            android:id="@+id/btn3"
+                            android:layout_width="100dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            android:layout_height="100dp"
+                            android:src="@drawable/gucibrand" />
+
+                        <ImageView
+                            android:id="@+id/btn4"
+                            android:layout_width="100dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            android:layout_height="100dp"
+                            android:src="@drawable/conversebrand" />
+
+                        <ImageView
+                            android:id="@+id/btn5"
+                            android:layout_width="100dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            android:layout_height="100dp"
+                            android:src="@drawable/garagebrand" />
+
+                        <ImageView
+                            android:id="@+id/btn6"
+                            android:layout_width="100dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            android:layout_height="100dp"
+                            android:src="@drawable/sneakerbrand" />
+
+                    </GridLayout>
+                </RelativeLayout>
+
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

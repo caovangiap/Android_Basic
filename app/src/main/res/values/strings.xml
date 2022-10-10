@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Android_Basic</string>
+    <string name="m_i_b_n_ng_nh_p_b_t_u_tr_i_nghi_m">Mời bạn đăng nhập để bắt đầu trải nghiệm</string>
+    <string name="Title">CHÀO MỪNG TRỞ LẠI</string>
+    <string name="SingUp">ĐĂNG KÍ</string>
+    <string name="SingIn">ĐĂNG NHẬP</string>
+    <string name="forrgot_password">FORRGOT PASSWORD</string>
+    <string name="SavePass">lưu mật khẩu</string>
+    <string name="DangNhap">Đăng nhập</string>
+    <string name="new_fashion">New Fashion</string>
+    <string name="recommend_product">Recommend Product</string>
+    <string name="all_product">All Product</string>
+    <string name="new_product">New Product</string>
+    <string name="sale">History Buy</string>
+    <string name="change_proile">Warinng For Us</string>
+    <string name="jusi_in">Jusi in</string>
+    <string name="view_all">View All</string>
+    <string name="shop_by_brand">Shop by Brand</string>
+    <string name="user_name">User Name</string>
+    <string name="user_email">User Note</string>
+    <string name="phonenumber">PhoneNumber</string>
+    <string name="user_note">User Note</string>
+    <string name="complete">Complete</string>
+    <string name="checkout">Checkout</string>
+    <string name="m_i_g_p_xin_vui_l_ng_g_i_xu_ng_y">Mọi góp ý xin vui lòng gửi xuống đây</string>
+</resources>

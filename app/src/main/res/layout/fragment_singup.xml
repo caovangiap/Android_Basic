@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="ViewModel"
+            type="com.example.android_basic.viewmodel.ViewModelSingUp" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="48dp"
+                android:orientation="vertical"
+                android:layout_marginRight="48dp"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="CHÀO MỪNG BẮT ĐẦU"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Mời bạn đăng kí để bắt đầu trải nghiệm "
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle=""
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/blackgroundlogin"
+            android:layout_weight="3.1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="26dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginLeft="48dp"
+                android:text="Đăng kí"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="30dp"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/UserName"
+                    android:layout_width="match_parent"
+                    android:hint="Tên tài khoản"
+                    android:paddingLeft="20dp"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border"
+                    android:layout_height="wrap_content"
+                    android:text="@={ViewModel.inputName}"
+                    >
+
+                </EditText>
+
+                <EditText
+                    android:id="@+id/UserPassword"
+                    android:layout_width="match_parent"
+                    android:hint="Mật khẩu"
+                    android:paddingLeft="20dp"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border"
+                    android:inputType="textPassword"
+                    android:layout_height="wrap_content"
+                    android:text="@={ViewModel.inputPass}"
+                    >
+
+                </EditText>
+
+                <EditText
+                    android:id="@+id/CheckPassword"
+                    android:layout_width="match_parent"
+                    android:hint="Nhập lại mật khẩu"
+                    android:paddingLeft="20dp"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border"
+                    android:inputType="textPassword"
+                    android:layout_height="wrap_content"
+                    android:text="@={ViewModel.inputPassAgain}"
+                    >
+
+                </EditText>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Đồng ý với điều khoản của chúng tôi"
+                    android:textStyle="italic"
+                    android:layout_height="wrap_content">
+
+                </CheckBox>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/backto_longin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:text="Trở về"
+                        android:textColor="@color/black"
+                        android:background="@drawable/border">
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/SingUp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Đăng ký"
+                        android:textColor="@color/white"
+                        android:background="@drawable/border"
+                        android:backgroundTint="@color/black">
+
+                    </Button>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
